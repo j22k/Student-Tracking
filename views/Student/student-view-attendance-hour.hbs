@@ -1,0 +1,48 @@
+<style>
+  .table th,
+  .table td {
+    vertical-align: middle;
+  }
+
+  .table th {
+    width: 200px;
+  }
+
+  .table .font-weight-bold {
+    color: #007bff;
+  }
+</style>
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Attendance by Hour</h2>
+        <hr>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Attendance Summary</h5>
+            <table class="table">
+              <tr>
+                <th>Total Hours </th>
+                <td><span class="font-weight-bold">:{{attendance.total}}</span></td>
+              </tr>
+              <tr>
+                <th>Attended Hours</th>
+                <td><span class="font-weight-bold">:{{attendance.attended}}</span></td>
+              </tr>
+              <tr>
+                <th>Percentage</th>
+                <td>
+                  <span class="font-weight-bold" style="color: {{attendance.percentageColor}};">
+                    :{{attendance.percentage}}
+                  </span>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

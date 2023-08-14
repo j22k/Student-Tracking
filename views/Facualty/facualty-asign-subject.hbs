@@ -1,0 +1,91 @@
+{{#each facualty}}
+<div class="card">
+  <h5 class="card-header">{{this.facualtynumber}}</h5>
+  <div class="card-body">
+    <form action="/facualty/asign_subject/{{this._id}}" method="post">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <h5 class="card-header">{{this.fullname}}</h5>
+          </div> 
+          
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="form1Example19">Hour</label>
+            <select id="form1Example19" name="hour" class="form-control form-control-lg" disabled>
+              <option value="1"> 1</option>
+              <option value="2"> 2</option>
+              <option value="3"> 3</option>
+              <option value="4"> 4</option>
+              <option value="5"> 5</option>
+              <option value="6"> 6</option>
+              <option value="7"> 7</option>
+              <option value="8"> 8</option>
+            </select>
+          </div>
+          <!-- Add more inputs here for the third column -->
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="form1Example19">Batch</label>
+            <input  id="form1Example19" type="number" id="year" name="batch" class="form-control form-control-lg"
+                                        min="1900" max="2099" value="2023" required disabled />
+          </div>
+          <!-- Add more inputs here for the fourth column -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="form1Example19">Semester</label>
+            <select id="form1Example19" name="semester" class="form-control form-control-lg" disabled>
+              <option value="Semester 1">Semester 1</option>
+              <option value="Semester 2">Semester 2</option>
+              <option value="Semester 3">Semester 3</option>
+              <option value="Semester 4">Semester 4</option>
+              <option value="Semester 5">Semester 5</option>
+              <option value="Semester 6">Semester 6</option>
+              <option value="Semester 7">Semester 7</option>
+              <option value="Semester 8">Semester 8</option>
+            </select>
+          </div>
+          <!-- Add more inputs here for the third column -->
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="form1Example19">Subject</label>
+            <input type="text" id="form1Example19" name="subject" class="form-control form-control-lg" disabled />
+          </div>
+          <!-- Add more inputs here for the fourth column -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <button type="button" class="btn btn-primary" onclick="enableInputs(this)">
+            <i class="fas fa-pencil-alt"></i> Edit
+          </button>
+          <button type="submit" class="btn btn-primary" disabled onclick="submitForm(event)">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+{{/each}}
+
+<script>
+  function enableInputs(button) {
+    const cardBody = button.closest('.card-body');
+    const inputs = cardBody.querySelectorAll('input, select');
+    const submitButton = cardBody.querySelector('button[type="submit"]');
+
+    inputs.forEach(function (input) {
+      input.disabled = false;
+    });
+
+    button.disabled = true;
+    submitButton.disabled = false;
+  }
+</script>

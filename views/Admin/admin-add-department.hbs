@@ -1,0 +1,72 @@
+<section class="vh-200" style="background-color: #4f5762;">
+    <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-xl-9">
+
+                <h2 class="text-white mb-4">Add new Department</h2>
+
+                <div class="card" style="border-radius: 15px;">
+                    <form action="/admin/register_department" method="post" enctype="multipart/form-data">
+                        <div class="card-body">
+
+                            <div class="row align-items-center pt-4 pb-3">
+                                <div class="col-md-3 ps-5">
+
+                                    <h6 class="mb-0">Department Name</h6>
+
+                                </div>
+                                <div class="col-md-9 pe-5">
+
+                                    <input type="text" id="name" name="departmentname"
+                                        class="form-control form-control-lg" required />
+
+                                </div>
+                            </div>
+
+                            <div class="row align-items-center py-3">
+                                <div class="col-md-3 ps-5">
+
+                                    <h6 class="mb-0">Date of Registration</h6>
+
+                                </div>
+                                <div class="col-md-9 pe-5">
+
+                                    <input type="date" name="dateofstart" class="form-control form-control-lg"
+                                        required />
+
+                                </div>
+                            </div>
+
+
+                            <div class="row align-items-center pt-4 pb-3">
+                                <div class="col-md-3 ps-5">
+
+                                    <h6 class="mb-0">Code</h6>
+
+                                </div>
+                                <div class="col-md-9 pe-5">
+
+                                    <input type="text" name="admissionnumber" class="form-control form-control-lg"
+                                        required />
+
+                                </div>
+                            </div>
+                            <hr class="mx-n3">
+
+                            <div class="px-5 py-4">
+                                <button type="submit" class="btn btn-primary btn-lg">Send application</button>
+                            </div>
+                            <div class="px-5 py-4">
+                            </div>
+                            <div class="px-5 py-4">
+                            </div>
+
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+</section>

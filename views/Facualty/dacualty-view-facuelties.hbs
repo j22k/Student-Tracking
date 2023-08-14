@@ -1,0 +1,103 @@
+{{#each facualty}}
+<div class="card">
+  <h5 class="card-header">{{this.facualtynumber}}</h5>
+  <div class="card-body">
+    <form action="">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="form1Example13">Full Name</label>
+          <input type="text" id="form1Example13" name="fullname" class="form-control form-control-lg"
+            value="{{this.fullname}}" disabled />
+        </div>
+        <div class="form-group">
+          <label for="form1Example14">Email</label>
+          <input type="email" id="form1Example14" name="email" class="form-control form-control-lg"
+            value="{{this.e-mail}}" disabled />
+        </div>
+        <!-- Add more inputs here for the first column -->
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="form1Example15">Date of Birth</label>
+          <input type="text" id="form1Example15" name="dob" class="form-control form-control-lg" value="{{this.DOB}}"
+            disabled />
+        </div>
+        <div class="form-group">
+          <label for="form1Example16">Phone Number</label>
+          <input type="text" id="form1Example16" name="phoneNo" class="form-control form-control-lg"
+            value="{{this.phoneNo}}" disabled />
+        </div>
+        <!-- Add more inputs here for the second column -->
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="form1Example17">Address</label>
+          <input type="text" id="form1Example17" name="address" class="form-control form-control-lg"
+            value="{{this.address}}" disabled />
+        </div>
+        <div class="form-group">
+          <label for="form1Example18">Department</label>
+          <input type="text" id="form1Example18" name="department" class="form-control form-control-lg"
+            value="{{this.Department}}" disabled />
+        </div>
+        <!-- Add more inputs here for the third column -->
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="form1Example19">Position</label>
+          <input type="text" id="form1Example19" name="position" class="form-control form-control-lg"
+            value="{{this.position}}" disabled />
+        </div>
+        <div class="form-group">
+          <label for="form1Example20">Username</label>
+          <input type="text" id="form1Example20" name="username" class="form-control form-control-lg"
+            value="{{this.username}}" disabled />
+        </div>
+        <!-- Add more inputs here for the fourth column -->
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="form1Example21">Password</label>
+      <input type="password" id="form1Example21" name="password" class="form-control form-control-lg"
+        value="{{this.password}}" disabled />
+    </div>
+    <div class="row">
+      <div class="col"><button type="button" class="btn btn-primary" onclick="enableInputs(this)">
+          <i class="fas fa-pencil-alt"></i> Edit
+        </button>
+        <button type="submit" class="btn btn-primary" disabled onclick="submitForm(event)">Submit</button>
+
+      </div>
+    </div></form>
+  </div>
+</div>
+{{/each}}
+
+<script>
+  function enableInputs(button) {
+    const cardBody = button.closest('.card-body');
+    const inputs = cardBody.querySelectorAll('input');
+    const submitButton = cardBody.querySelector('button[type="submit"]');
+
+    inputs.forEach(function (input) {
+      input.disabled = false;
+    });
+
+    button.disabled = true;
+    submitButton.disabled = false;
+  },
+  function submitForm(event) {
+  event.preventDefault(); // Prevents the default form submission behavior
+  
+  // Perform any validation or processing logic here
+  
+  // Example: Sending a router request or redirecting to a new page
+  window.location.href = "/your-route"; // Replace "/your-route" with your desired route
+  
+  // If you are using a JavaScript framework or library (e.g., React, Angular, Vue.js), you can use their routing mechanisms instead.
+}
+
+</script>

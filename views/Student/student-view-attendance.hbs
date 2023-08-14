@@ -1,0 +1,197 @@
+<style>
+  .absent {
+    color: red;
+  }
+
+  .present {
+    color: green;
+  }
+
+  .primary-column {
+    background-color: #007bff;
+    /* Replace with your primary color */
+    color: #fff;
+  }
+
+  .card {
+    display: none;
+    position: absolute;
+    padding: 10px;
+  }
+
+  td:hover .card {
+    display: block;
+  }
+
+  /* Additional styles for mobile devices */
+  @media (max-width: 767.98px) {
+    .table-responsive {
+      overflow-x: auto;
+    }
+  }
+</style>
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Attendance Viewer</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2"></div> <!-- Empty column to align the table -->
+      <div class="col-md-8">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th class="primary-column">Hour 1</th>
+                <th class="primary-column">Hour 2</th>
+                <th class="primary-column">Hour 3</th>
+                <th class="primary-column">Hour 4</th>
+                <th class="primary-column">Hour 5</th>
+                <th class="primary-column">Hour 6</th>
+                <th class="primary-column">Hour 7</th>
+                <th class="primary-column">Hour 8</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each attendance}}+
+              <tr>
+                <td>{{this._id}}</td>
+                 {{#if (lookup this '1')}}
+                <td class="{{#if (lookup (lookup this '1') '1.check')}}present{{else}}absent{{/if}}">
+                  {{#if (lookup (lookup this '1') '1.check')}}
+                  Present
+                  {{else}}
+                  Absent
+                  {{/if}}
+                  <div class="card primary-color">Subject:{{lookup (lookup this '1') '1.subject'}}, Faculty Name: {{lookup (lookup this '1') '1.name'}}</div>
+                </td>
+                {{else}}
+                <td>
+                  *
+                </td>
+                {{/if}}
+
+                 {{#if (lookup this '2')}}
+                <td class="{{#if (lookup (lookup this '2') '2.check')}}present{{else}}absent{{/if}}">
+                  {{#if (lookup (lookup this '2') '2.check')}}
+                  Present
+                  {{else}}
+                  Absent
+                  {{/if}}
+                  <div class="card primary-color">Subject:{{lookup (lookup this '2') '2.subject'}}, Faculty Name: {{lookup (lookup this '2') '2.name'}}</div>
+                </td>
+                {{else}}
+                <td>
+                  *
+                </td>
+                {{/if}}
+
+                 {{#if (lookup this '3')}}
+                <td class="{{#if (lookup (lookup this '3') '3.check')}}present{{else}}absent{{/if}}">
+                  {{#if (lookup (lookup this '3') '3.check')}}
+                  Present
+                  {{else}}
+                  Absent
+                  {{/if}}
+                  <div class="card primary-color">Subject:{{lookup (lookup this '3') '3.subject'}}, Faculty Name: {{lookup (lookup this '3') '3.name'}}</div>
+                </td>
+                {{else}}
+                <td>
+                  *
+                </td>
+                {{/if}}
+
+                 {{#if (lookup this '4')}}
+                <td class="{{#if (lookup (lookup this '4') '4.check')}}present{{else}}absent{{/if}}">
+                  {{#if (lookup (lookup this '4') '4.check')}}
+                  Present
+                  {{else}}
+                  Absent
+                  {{/if}}
+                  <div class="card primary-color">Subject:{{lookup (lookup this '4') '4.subject'}}, Faculty Name: {{lookup (lookup this '4') '4.name'}}</div>
+                </td>
+                {{else}}
+                <td>
+                  *
+                </td>
+                {{/if}}
+
+
+                {{#if (lookup this '5')}}
+                <td class="{{#if (lookup (lookup this '5') '5.check')}}present{{else}}absent{{/if}}">
+                  {{#if (lookup (lookup this '5') '5.check')}}
+                  Present
+                  {{else}}
+                  Absent
+                  {{/if}}
+                  <div class="card primary-color">Subject:{{lookup (lookup this '5') '5.subject'}}, Faculty Name: {{lookup (lookup this '5') '5.name'}}</div>
+                </td>
+                {{else}}
+                <td>
+                  *
+                </td>
+                {{/if}}
+
+
+
+                 {{#if (lookup this '6')}}
+                <td class="{{#if (lookup (lookup this '6') '6.check')}}present{{else}}absent{{/if}}">
+                  {{#if (lookup (lookup this '6') '6.check')}}
+                  Present
+                  {{else}}
+                  Absent
+                  {{/if}}
+                  <div class="card primary-color">Subject:{{lookup (lookup this '6') '6.subject'}}, Faculty Name: {{lookup (lookup this '6') '6.name'}}</div>
+                </td>
+                {{else}}
+                <td>
+                  *
+                </td>
+                {{/if}}
+
+                 {{#if (lookup this '7')}}
+                <td class="{{#if (lookup (lookup this '7') '7.check')}}present{{else}}absent{{/if}}">
+                  {{#if (lookup (lookup this '7') '7.check')}}
+                  Present
+                  {{else}}
+                  Absent
+                  {{/if}}
+                  <div class="card primary-color">Subject:{{lookup (lookup this '7') '7.subject'}}, Faculty Name: {{lookup (lookup this '7') '7.name'}}</div>
+                </td>
+                {{else}}
+                <td>
+                  *
+                </td>
+                {{/if}}
+
+                 {{#if (lookup this '8')}}
+                <td class="{{#if (lookup (lookup this '8') '8.check')}}present{{else}}absent{{/if}}">
+                  {{#if (lookup (lookup this '8') '8.check')}}
+                  Present
+                  {{else}}
+                  Absent
+                  {{/if}}
+                  <div class="card primary-color">Subject:{{lookup (lookup this '8') '8.subject'}}, Faculty Name: {{lookup (lookup this '8') '8.name'}}</div>
+                </td>
+                {{else}}
+                <td>
+                  *
+                </td>
+                {{/if}}
+
+              </tr>
+              {{/each}}
+              <!-- Add more attendance data rows here -->
+
+              <!-- Add more attendance data rows here -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-md-2"></div> <!-- Empty column to align the table -->
+    </div>
+  </div>
+</section>

@@ -1,0 +1,99 @@
+<section>
+  <div class="container">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Select batch</h5>
+        <form action="/facualty/fetchStudents" method="post" enctype="multipart/form-data">
+          <div class="form-row">
+            <div class="col-md-4 mb-3">
+              <label for="batchYear">Batch Year</label>
+              <select class="form-control" id="batch" name="batch">
+                {{#each assignedBatches}}
+                <option value="{{this.batch}}">{{this.batch}}</option>
+                {{/each}}
+              </select>
+            </div>
+
+            <div class="col-md-12 mt-3">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <form action="/facualty/submit_attendance" method="post">
+      <div class="card mt-4">
+        <div class="card-body">
+          <h2 class="card-title">Attendance Marking</h2>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Roll No</th>
+                <th>Name</th>
+                <th>Absent</th>
+                <th>Present</th>
+              </tr>
+            </thead>
+            <tbody id="studentTableBody">
+              {{#each students}}
+              <tr>
+                <td>{{this.rollno}}</td>
+                <td>{{this.name}}</td>
+                <td>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="{{this._id}}" id="absent1" value="absent">
+                    <label class="form-check-label" for="absent1">
+                      <span class="text-danger">&#10060;</span>
+                    </label>
+                  </div>
+                </td>
+                <td>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="{{this._id}}" id="present1" value="present">
+                    <label class="form-check-label" for="present1">
+                      <span class="text-success">&#10004;</span>
+                    </label>
+                  </div>
+                </td>
+              </tr>
+              {{/each}}
+              <!-- Add more rows here as needed -->
+            </tbody>
+          </table>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Attendance Information</h5>
+            <div class="form-row">
+              <div class="col-md-4 mb-3">
+                <label for="semester">Semester</label>
+                <input type="text" class="form-control" value="{{batchdetails.semester.semester}}" name="semester"
+                  id="semesterInput" disabled>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="subject">subject</label>
+                <input type="text" class="form-control" value="{{batchdetails.subjects.subject}}" name="subject"
+                  id="subjectInput" disabled>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="subject">Hour</label>
+                <input type="text" class="form-control" value="{{batchdetails.hour.hour}}" name="hour" id="hourInput"
+                  disabled>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="date">Date</label>
+                <input type="date" class="form-control" id="date" name="date">
+              </div>
+              <div class="col-md-12 mt-3">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </form>
+  </div>
+
+</section>

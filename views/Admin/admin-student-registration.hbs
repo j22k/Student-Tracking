@@ -1,0 +1,169 @@
+<section class="vh-200" style="background-color: #4f5762;">
+    <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-xl-9">
+
+                <h2 class="text-white mb-4">Registration</h2>
+
+                <div class="card" style="border-radius: 15px;">
+                    <form action="/admin/register_student" method="post" enctype="multipart/form-data">
+                        <div class="card-body">
+
+                            <div class="row align-items-center pt-4 pb-3">
+                                <div class="col-md-3 ps-5">
+
+                                    <h6 class="mb-0">Full name</h6>
+
+                                </div>
+                                <div class="col-md-9 pe-5">
+
+                                    <input type="text" id="name" name="fullname" class="form-control form-control-lg" required />
+
+                                </div>
+                            </div>
+
+                            <div class="row align-items-center py-3">
+                                <div class="col-md-3 ps-5">
+
+                                    <h6 class="mb-0">Email address</h6>
+
+                                </div>
+                                <div class="col-md-9 pe-5">
+
+                                    <input type="email" name="e-mail" class="form-control form-control-lg"
+                                        placeholder="example@example.com" required />
+
+                                </div>
+                            </div>
+
+                            <div class="row align-items-center py-3">
+                                <div class="col-md-3 ps-5">
+
+                                    <h6 class="mb-0">DOB</h6>
+
+                                </div>
+                                <div class="col-md-9 pe-5">
+
+                                    <input type="date" name="DOB" class="form-control form-control-lg"
+                                       required />
+
+                                </div>
+                            </div>
+
+                            <div class="row align-items-center py-3">
+                                <div class="col-md-3 ps-5">
+
+                                    <h6 class="mb-0">Phone number</h6>
+
+                                </div>
+                                <div class="col-md-9 pe-5">
+
+                                    <input type="tel" name="phoneNo" class="form-control form-control-lg"
+                                         required />
+
+                                </div>
+                            </div>
+
+
+                            <div class="row align-items-center py-3">
+                                <div class="col-md-3 ps-5">
+
+                                    <h6 class="mb-0">Address</h6>
+
+                                </div>
+                                <div class="col-md-9 pe-5">
+
+                                    <textarea class="form-control" name="address" rows="3" required></textarea>
+
+                                </div>
+                            </div>
+                            <hr class="mx-n3">
+                            <div class="row align-items-center pt-4 pb-3">
+                                <div class="col-md-3 ps-5">
+
+                                    <h6 class="mb-0">Admission Number</h6>
+
+                                </div>
+                                <div class="col-md-9 pe-5">
+
+                                    <input type="text" name="admissionnumber" class="form-control form-control-lg"
+                                        required />
+
+                                </div>
+                            </div>
+
+
+                            <div class="row align-items-center py-3">
+                                <div class="col-md-3 ps-5">
+
+                                    <h6 class="mb-0">Batch</h6>
+
+                                </div>
+                                <div class="col-md-9 pe-5">
+                                    <input type="number" id="year" name="year" class="form-control form-control-lg"
+                                        min="1900" max="2099" value="2023" required>
+
+
+                                </div>
+                            </div>
+                            <div class="row align-items-center py-3">
+                                <div class="col-md-3 ps-5">
+
+                                    <h6 class="mb-0">Department</h6>
+
+                                </div>
+                                 <div class="col-md-9 pe-5">
+
+                                    <select name="Department" class="form-control form-control-lg" required>
+                                        <option value="">Select Department</option>
+                                        {{#each departments}}
+                                        <option value="{{this.departmentname}}">{{this.departmentname}}</option>
+                                        {{/each}}
+                                    </select>
+
+                                </div>
+                            </div>
+                            <hr class="mx-n3">
+
+                            <div class="row align-items-center py-3">
+                                <div class="col-md-3 ps-5">
+
+                                    <h6 class="mb-0">Upload photo</h6>
+
+                                </div>
+                                <div class="col-md-9 pe-5">
+
+                                    <input class="form-control form-control-lg" id="formFileLg" type="file" name="photo" />
+                                    <div class="small text-muted mt-2">Upload png/jpeg file. Max file
+                                        size 50 MB</div>
+
+                                </div>
+                            </div>
+                            <div class="row align-items-center py-3">
+                                <div class="col-md-3 ps-5">
+
+                                    <h6 class="mb-0">Upload signature</h6>
+
+                                </div>
+                                <div class="col-md-9 pe-5">
+
+                                    <input class="form-control form-control-lg" id="formFileLg" type="file" name="sign" />
+                                    <div class="small text-muted mt-2">Upload png/jpeg file. Max file
+                                        size 50 MB</div>
+
+                                </div>
+                            </div>
+
+                            <hr class="mx-n3">
+
+                            <div class="px-5 py-4">
+                                <button type="submit" class="btn btn-primary btn-lg">Send application</button>
+                            </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+</section>
